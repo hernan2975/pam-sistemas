@@ -1,0 +1,55 @@
+sistema: "Red de Trueque - Eduardo Castex"
+rotores:
+  - nombre: "Panadería 'El Trigo'"
+    tipo: grupo
+    etiquetas: ["pan", "harina_comprada"]
+  - nombre: "Molino Comunitario"
+    tipo: grupo
+    etiquetas: ["harina", "trigo_local"]
+  - nombre: "Huerta Familia Rojas"
+    tipo: grupo
+    etiquetas: ["verduras", "trueque_directo"]
+  - nombre: "Carpintería López"
+    tipo: grupo
+    etiquetas: ["reparaciones", "herramientas"]
+  - nombre: "Nodo central"
+    tipo: persona
+    etiquetas: ["coordina", "registra", "único_contacto_molino"]
+
+tuberias:
+  - desde: "Huerta Familia Rojas"
+    hacia: "Panadería 'El Trigo'"
+    tipo: "verduras"
+    intensidad: 3
+  - desde: "Panadería 'El Trigo'"
+    hacia: "Huerta Familia Rojas"
+    tipo: "pan"
+    intensidad: 3
+  - desde: "Nodo central"
+    hacia: "Molino Comunitario"
+    tipo: "pedido_harina"
+    intensidad: 4
+  - desde: "Molino Comunitario"
+    hacia: "Nodo central"
+    tipo: "harina"
+    intensidad: 4
+  - desde: "Nodo central"
+    hacia: "Panadería 'El Trigo'"
+    tipo: "harina"
+    intensidad: 4
+  - desde: "Carpintería López"
+    hacia: "Huerta Familia Rojas"
+    tipo: "reparaciones"
+    intensidad: 2
+  - desde: "Huerta Familia Rojas"
+    hacia: "Carpintería López"
+    tipo: "verduras"
+    intensidad: 2
+  - desde: "Carpintería López"
+    hacia: "Molino Comunitario"
+    tipo: "reparaciones"
+    intensidad: 1
+  - desde: "Molino Comunitario"
+    hacia: "Carpintería López"
+    tipo: "trigo"
+    intensidad: 1
