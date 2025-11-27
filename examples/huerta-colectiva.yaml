@@ -3,23 +3,56 @@ rotores:
   - nombre: "María"
     tipo: persona
     etiquetas: ["riego", "semillas", "confianza_alta"]
+  - nombre: "Carlos"
+    tipo: persona
+    etiquetas: ["cosecha", "transporte"]
   - nombre: "Bomba solar"
     tipo: herramienta
     etiquetas: ["depende_sol", "mantenimiento_mensual"]
+  - nombre: "Huerta"
+    tipo: espacio
+    etiquetas: ["1000m2", "agua_pozo"]
   - nombre: "Mercado local"
     tipo: espacio
     etiquetas: ["venta_viernes", "precios_estables"]
+  - nombre: "Compostera"
+    tipo: herramienta
+    etiquetas: ["orgánico", "lenta"]
 
 tuberias:
   - desde: "María"
     hacia: "Bomba solar"
     tipo: "mantenimiento"
-    intensidad: 3  # 1-5
+    intensidad: 3
   - desde: "Bomba solar"
     hacia: "Huerta"
     tipo: "agua"
     intensidad: 5
+  - desde: "María"
+    hacia: "Huerta"
+    tipo: "siembra"
+    intensidad: 4
+  - desde: "Carlos"
+    hacia: "Huerta"
+    tipo: "cosecha"
+    intensidad: 4
+  - desde: "Huerta"
+    hacia: "Compostera"
+    tipo: "desechos"
+    intensidad: 3
+  - desde: "Compostera"
+    hacia: "Huerta"
+    tipo: "abono"
+    intensidad: 2
   - desde: "Huerta"
     hacia: "Mercado local"
     tipo: "verduras"
     intensidad: 4
+  - desde: "Mercado local"
+    hacia: "María"
+    tipo: "dinero"
+    intensidad: 4
+  - desde: "Mercado local"
+    hacia: "Carlos"
+    tipo: "dinero"
+    intensidad: 3
