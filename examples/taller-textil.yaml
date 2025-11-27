@@ -1,0 +1,50 @@
+sistema: "Taller Textil Cooperativo - Santa Rosa"
+rotores:
+  - nombre: "Lucía"
+    tipo: persona
+    etiquetas: ["tejido", "diseño", "única_operadora_horno"]
+  - nombre: "Elena"
+    tipo: persona
+    etiquetas: ["venta", "contabilidad"]
+  - nombre: "Horno de teñido"
+    tipo: herramienta
+    etiquetas: ["gas", "temperatura_crítica", "sin_repuestos"]
+  - nombre: "Telar manual"
+    tipo: herramienta
+    etiquetas: ["madera", "reparable"]
+  - nombre: "Almacén de insumos"
+    tipo: espacio
+    etiquetas: ["hilos", "tintes", "stock_mensual"]
+  - nombre: "Feria artesanal"
+    tipo: espacio
+    etiquetas: ["sábados", "turismo_estacional"]
+
+tuberias:
+  - desde: "Lucía"
+    hacia: "Horno de teñido"
+    tipo: "operación"
+    intensidad: 5
+  - desde: "Horno de teñido"
+    hacia: "Telar manual"
+    tipo: "tejido_teñido"
+    intensidad: 4
+  - desde: "Telar manual"
+    hacia: "Almacén de insumos"
+    tipo: "productos"
+    intensidad: 3
+  - desde: "Almacén de insumos"
+    hacia: "Feria artesanal"
+    tipo: "venta"
+    intensidad: 4
+  - desde: "Feria artesanal"
+    hacia: "Elena"
+    tipo: "dinero"
+    intensidad: 4
+  - desde: "Elena"
+    hacia: "Almacén de insumos"
+    tipo: "compra_insumos"
+    intensidad: 3
+  - desde: "Elena"
+    hacia: "Lucía"
+    tipo: "pago"
+    intensidad: 4
