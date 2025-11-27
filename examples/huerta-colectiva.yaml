@@ -1,0 +1,25 @@
+sistema: "Huerta Colectiva - Lonquimay"
+rotores:
+  - nombre: "María"
+    tipo: persona
+    etiquetas: ["riego", "semillas", "confianza_alta"]
+  - nombre: "Bomba solar"
+    tipo: herramienta
+    etiquetas: ["depende_sol", "mantenimiento_mensual"]
+  - nombre: "Mercado local"
+    tipo: espacio
+    etiquetas: ["venta_viernes", "precios_estables"]
+
+tuberias:
+  - desde: "María"
+    hacia: "Bomba solar"
+    tipo: "mantenimiento"
+    intensidad: 3  # 1-5
+  - desde: "Bomba solar"
+    hacia: "Huerta"
+    tipo: "agua"
+    intensidad: 5
+  - desde: "Huerta"
+    hacia: "Mercado local"
+    tipo: "verduras"
+    intensidad: 4
