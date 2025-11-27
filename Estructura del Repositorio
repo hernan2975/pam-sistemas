@@ -1,0 +1,32 @@
+pam-sistemas/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── pyproject.toml
+│
+├── src/
+│   └── pamsistemas/
+│       ├── __init__.py
+│       ├── core/
+│       │   ├── model.py          # Elementos del sistema: Actor, Flujo, Recurso, Nexo
+│       │   ├── analyzer.py       # Detección de ciclos, cuellos, dependencias
+│       │   └── simulator.py      # Simulación de perturbaciones
+│       ├── io/
+│       │   ├── parser.py         # Carga desde YAML/CSV simple
+│       │   └── exporter.py       # Exporta a PDF (WeasyPrint), HTML, SVG
+│       └── cli/
+│           └── main.py           # Interfaz de consola (modo asamblea)
+│
+├── examples/
+│   ├── huerta-colectiva.yaml
+│   ├── taller-textil.yaml
+│   └── trueque-eduardo-castex.yaml
+│
+├── docs/
+│   ├── guia-asamblea.md         # Cómo usar en reuniones (sin técnicos)
+│   └── metamodelo.md             # Explicación de "rotores", "tanques", etc.
+│
+└── scripts/
+    ├── web-export.py             # Genera sitio estático autocontenible
+    └── print-friendly.py        # PDF listo para imprimir en kiosco
