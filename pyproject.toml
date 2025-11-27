@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pam-sistemas"
+version = "1.0.0"
+description = "Análisis de sistemas comunitarios para La Pampa"
+authors = [{name = "Colectivo Autónomo Pampeano", email = "contacto@pamsistemas.org"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "networkx>=3.3",
+    "click>=8.1",
+    "weasyprint>=61.0",
+    "jinja2>=3.1"
+]
+
+[project.scripts]
+pam-sistemas = "pamsistemas.cli.main:main"
